@@ -1,0 +1,129 @@
+@import "/usr/lib/hyprwhspr/config/waybar/hyprwhspr-style.css";
+/* =============================================================================
+   WAYBAR STYLES - ORGANIZED AND CLEANED
+   ============================================================================= */
+
+/* =============================================================================
+   GLOBAL STYLES & VARIABLES
+   ============================================================================= */
+* {
+  /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
+  font-family: "Adwaita Sans", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  transition: background-color 0.3s ease-out;
+}
+
+/* =============================================================================
+   MAIN WINDOW STYLING
+   ============================================================================= */
+window#waybar {
+  background: rgba(13, 16, 23, 0.8);
+  border-radius: 15px;
+  color: #bfbdb6;
+  font-family: Cousine Nerd Font, feather;
+  transition: background-color 0.5s;
+}
+
+/* =============================================================================
+   LAYOUT & POSITIONING
+   ============================================================================= */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(13, 16, 23, 0.7);
+  padding: 0px 6px;
+  border-radius: 15px;
+}
+
+.modules-center {
+  padding: 0px 25px;
+}
+
+/* =============================================================================
+   COMPONENT BASE STYLES
+   ============================================================================= */
+#custom-hyprwhspr {
+  padding-left: 12px;
+}
+#cpu,
+#memory,
+#pulseaudio {
+  padding: 0 12px;
+}
+#clock {
+  font-size: 14px;
+  font-weight: 900;
+  padding-right: 12px;
+}
+
+/* =============================================================================
+   WORKSPACES STYLING
+   ============================================================================= */
+#workspaces button {
+  font-weight: 900;
+  color: #bfbdb6;
+}
+
+#workspaces button.active {
+  background: #0d1017;
+  color: #ffb454;
+}
+
+#workspaces button:hover {
+  color: #59c2ff;
+  box-shadow: none;
+  border: none;
+}
+
+/* =============================================================================
+   CUSTOM COMPONENTS
+   ============================================================================= */
+#custom-arch {
+  padding: 0 20px 0 10px;
+  font-size: 25px;
+  transition: color 0.5s;
+}
+
+#custom-arch:hover {
+  color: #59c2ff;
+}
+
+/* =============================================================================
+   STATE-BASED STYLING (Ayu Theme)
+   ============================================================================= */
+
+/* Battery States */
+#battery.charging {
+  color: #aad94c;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffb454;
+}
+
+#battery.critical:not(.charging) {
+  color: #d95757;
+}
+
+/* Network States */
+#network.disconnected {
+  color: #d95757;
+}
+
+/* Audio States */
+#pulseaudio.muted {
+  color: #d95757;
+}
+
+/* System States */
+#temperature.critical {
+  color: #d95757;
+}
+
+#cpu.high {
+  color: #ffb454;
+}
+
+#memory.high {
+  color: #ffb454;
+}

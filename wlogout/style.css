@@ -1,0 +1,37 @@
+* {
+  background-image: none;
+}
+
+window {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+button {
+  color: rgb(242, 151, 24);
+  font-size: 16px;
+  background-color: rgba(30, 30, 30, 0.9);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25%;
+  margin: 200px 15px;
+}
+
+button:focus,
+button:active,
+button:hover {
+  color: rgba(242, 151, 24, 0.9);
+}
+
+#lock {
+  background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+#reboot {
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}

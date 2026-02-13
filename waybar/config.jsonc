@@ -1,0 +1,28 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 10,
+  "spacing": 4,
+  "margin-top": 4,
+  "margin-left": 4,
+  "margin-right": 4,
+  "border-radius": 12,
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "custom/hyprwhspr",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "clock"
+  ],
+  "include": [
+    "~/.config/waybar/modules.json",
+    "/home/tprat/.config/waybar/hyprwhspr-module.jsonc"
+  ]
+}
