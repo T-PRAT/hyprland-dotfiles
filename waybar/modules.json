@@ -1,84 +1,106 @@
 {
-    "custom/arch": {
-        "format": "󰣇",
-        "tooltip": true,
-        "tooltip-format": "btw",
-        "on-click": "exec vicinae toggle"
-    },
-    "hyprland/workspaces": {
-        "warp-on-scroll": false,
-        "format": "{icon}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 3,
-            "HDMI-A-2": 2
-        }
-    },
-    "hyprland/window": {
-        "icon": true,
-        "format": "{title:.52}"
-    },
-    "cpu": {
-        "format": "   {usage}%",
-        "tooltip": true,
-        "on-click": "kitty -e btop"
-    },
-    "memory": {
-        "format": "   {}%",
-        "tooltip": true,
-        "on-click": "kitty -e btop"
-    },
-    "pulseaudio": {
-        "format": "   {volume}%",
-        "format-bluetooth": "{icon} {volume}%  {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol",
-        "tooltip": true
-    },
-    "clock": {
-        "interval": 60,
-        "tooltip": true,
-        "format": "{:%H:%M}",
-        "tooltip-format": "<big>{:%D}</big>\n<tt><big>{calendar}</big></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "format": {
-                "months": "<span color='#b8cc52'><b>{}</b></span>",
-                "days": "<span color='#b3b1ad'><b>{}</b></span>",
-                "weeks": "<span color='#e6e1cf'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffb454'><b>{}</b></span>",
-                "today": "<span color='#59c2ff'><b><u>{}</u></b></span>"
-            }
-        }
-    },
-    "network": {
-        "format-wifi": "   {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
-    }
+	"custom/voxtype": {
+		"exec": "voxtype status --follow --format json",
+		"return-type": "json",
+		"format": "{icon}",
+		"format-icons": {
+			"idle": "○",
+			"recording": "●",
+			"transcribing": "◐",
+			"stopped": "×"
+		},
+		"tooltip": true,
+		"on-click": "systemctl --user restart voxtype"
+	},
+	"custom/arch": {
+		"format": "󰣇",
+		"tooltip": true,
+		"tooltip-format": "btw",
+		"on-click": "exec vicinae toggle"
+	},
+	"hyprland/workspaces": {
+		"warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+			"*": 3,
+			"HDMI-A-2": 2
+		}
+	},
+	"mpris": {
+		"player": "spotify",
+		"format": "|     󰎇  {artist} - {title}",
+		"format-paused": "|       {artist} - {title}",
+		"on-click": "playerctl -p spotify play-pause",
+		"on-scroll-up": "playerctl -p spotify next",
+		"on-scroll-down": "playerctl -p spotify previous"
+	},
+	"hyprland/window": {
+		"icon": true,
+		"format": "{title:.52}"
+	},
+	"cpu": {
+		"format": "   {usage}%",
+		"tooltip": true,
+		"on-click": "kitty -e btop"
+	},
+	"memory": {
+		"format": "   {}%",
+		"tooltip": true,
+		"on-click": "kitty -e btop"
+	},
+	"pulseaudio": {
+		"format": "   {volume}%",
+		"format-bluetooth": "{icon} {volume}%  {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol",
+		"tooltip": true
+	},
+	"custom/date": {
+		"interval": 60,
+		"exec": "date '+%d/%m'",
+		"format": "{} — "
+	},
+	"clock": {
+		"interval": 60,
+		"tooltip": true,
+		"format": "{:%H:%M}",
+		"tooltip-format": "<big>{:%D}</big>\n<tt><big>{calendar}</big></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"format": {
+				"months": "<span color='#b8cc52'><b>{}</b></span>",
+				"days": "<span color='#b3b1ad'><b>{}</b></span>",
+				"weeks": "<span color='#e6e1cf'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffb454'><b>{}</b></span>",
+				"today": "<span color='#59c2ff'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+	"network": {
+		"format-wifi": "   {essid} ({signalStrength}%)",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+	}
 }
